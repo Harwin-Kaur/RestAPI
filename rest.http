@@ -1,0 +1,33 @@
+### Get request
+GET http://localhost:8000?id=8&fName=John&lName=Doe
+
+
+### update user request
+PUT http://localhost:8000
+Content-Type: application/json
+Authorization: 89029hsdgajk
+
+{
+    "id": 2,
+    "fName": "Lary"
+}
+
+
+### Post user request
+POST http://localhost:8000
+Content-Type: application/json
+
+{
+    "id": "3",
+    "fName": "sam",
+    "lName": "smith"
+}
+
+# curl -X POST "http://localhost:8000" -H"Content-Type: application/json" -d '{"id": "3","fName": "sam","lName": "smith"}'
+
+### Delete request
+DELETE http://localhost:8000/3
+
+
+   ### anything after first line is considered header, so we need to specify the content type
+
