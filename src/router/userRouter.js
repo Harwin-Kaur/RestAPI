@@ -1,13 +1,39 @@
 import express from 'express';
 const router = express.Router();
 
+let fakeDB = [{
+    id: 1,
+    fName: "harwin",
+    lname: "kaur"
+},
+{
+    id: 2,  
+    fName: "harwin",
+    lname: "kaur"
+}
+];
+
 router.get('/', (req, res) => {
-    
-    // fakeDB.push(req.query);
-    res.json({
+
+    try{
+        // throw new Error("testing error");
+
+        console.log(req.query);
+        // fakeDB.push(req.query);
+
+        res.json({
         message: "to do get method",
         users: fakeDB,
     });
+    }
+    catch(error){
+        console.log(error.message);
+        res.status(500).json
+        ({
+            status: "error",
+            message: "Error " + error.message,
+        });
+    }
 });
 
 router.put('/', (req, res) => {

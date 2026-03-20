@@ -1,9 +1,12 @@
+@urlEP = http://localhost:8000/api/v1/users
+
+
 ### Get request
-GET http://localhost:8000?id=8&fName=John&lName=Doe
+GET {{urlEP}}?id=8&fName=John&lName=Doe
 
 
 ### update user request
-PUT http://localhost:8000
+PUT {{urlEP}}
 Content-Type: application/json
 Authorization: 89029hsdgajk
 
@@ -14,7 +17,7 @@ Authorization: 89029hsdgajk
 
 
 ### Post user request
-POST http://localhost:8000
+POST {{urlEP}}
 Content-Type: application/json
 
 {
@@ -26,7 +29,7 @@ Content-Type: application/json
 # curl -X POST "http://localhost:8000" -H"Content-Type: application/json" -d '{"id": "3","fName": "sam","lName": "smith"}'
 
 ### Delete request
-DELETE http://localhost:8000/3
+DELETE {{urlEP}}/3
 
 
    ### anything after first line is considered header, so we need to specify the content type

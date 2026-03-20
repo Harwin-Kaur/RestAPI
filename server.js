@@ -8,23 +8,13 @@ const PORT = 8000;
 
 app.use(express.json()); //middleware to parse JSON data into object
 
-let fakeDB = [{
-    id: 1,
-    fName: "harwin",
-    lname: "kaur"
-},
-{
-    id: 2,
-    fName: "harwin",
-    lname: "kaur"
-}
-];
+
 
 // console.log(app);
 
 import userRouter from './src/router/userRouter.js';
 
-app.use("/api")
+app.use("/api/v1/users", userRouter)
 
 app.listen(PORT, (error) =>{
     error ? console.log(error) : console.log(`Server is running on port http://localhost:${PORT}`);
